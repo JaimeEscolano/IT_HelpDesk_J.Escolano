@@ -1,0 +1,14 @@
+# Java: archivos compilados
+/out/
+*.class
+
+# Datos locales
+/data/
+.env
+
+# Editor y sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log

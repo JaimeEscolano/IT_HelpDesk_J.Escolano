@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+    <head><meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>IT HelpDesk</title>
+        <link rel="stylesheet" href="/style.css">
+        <script src="/app.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <span class="brand">IT / HelpDesk</span>
+            <span>Soporte técnico · Panel de incidencias</span>
+        </header>
+        <main>
+            <h1>Gestión de incidencias</h1>
+            <p>Registra y realiza el seguimiento de los problemas informáticos.</p>
+            <section class="stats" id="stats" aria-live="polite"></section>
+            <div class="layout">
+                <section class="panel">
+                    <h2>Nueva incidencia</h2>
+                    <form id="ticket-form">
+                        <label>Título
+                            <input name="title" required maxlength="100" placeholder="Ej. El equipo no arranca">
+                        </label>
+                        <label>Descripción
+                            <textarea name="description" required maxlength="1000" rows="5"></textarea>
+                        </label>
+                        <label>Prioridad
+                            <select name="priority">
+                                <option>Baja</option>
+                                <option selected>Media</option>
+                                <option>Alta</option>
+                            </select>
+                        </label>
+                        <button>Registrar incidencia</button>
+                    </form>
+                </section>
+                <section class="panel">
+                    <h2>Incidencias registradas</h2>
+                    <div class="filters">
+                        <input id="search" aria-label="Buscar incidencias" placeholder="Buscar por texto">
+                        <select id="filter" aria-label="Filtrar estado">
+                            <option value="">Todos los estados</option>
+                            <option>Abierta</option>
+                            <option>En curso</option>
+                            <option>Resuelta</option>
+                        </select>
+                    </div>
+                    <div id="tickets"></div>
+                </section>
+            </div>
+            <p id="message" role="status"></p>
+        </main>
+    </body>
+</html>
